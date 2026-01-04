@@ -29,7 +29,7 @@ python predict_human_value_api.py
 - 训练数据：基础数据training_data_with_weights.parquet或包含武汉的扩充数据wuhan_train_weighted.parquet
 - 验证数据集：由训练数据集切分得到
 数据存放地址：
-https://pan.quark.cn/s/924335bdb441
+夸克网盘：https://pan.quark.cn/s/924335bdb441
 
 ### 训练
 
@@ -41,20 +41,4 @@ python train.py
 
 #### 输出
 - 模型默认保存至 `./checkpoints`目录
-
-
-### 测试
-- 将价值观分析服务的模型参数修改为新训练的模型，对test_dataset文件夹运行推理
-- 从human_value_data/下将分析结果的中间数据取出来，其中_ensemble.csv可以用于评测个体准确率，_cluster.csv可以用于评测事件准确率
-
-## 个体测试命令：
-```bash
-cd human_value_train
-python eval_valuetalk.py # 填入推理好的_ensemble.csv文件路径
-```
-## 事件测试命令：
-```bash
-cd human_value_train
-python eval_valuetalk_event.py # 填入推理好的_cluster.csv文件路径
-```
 
