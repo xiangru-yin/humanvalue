@@ -1,0 +1,460 @@
+{
+    "SECURITY": {
+        "原始定义": [
+            "healthy",
+            "family",
+            "order",
+            "clean",
+            "safety",
+            "belonging"
+        ],
+        "近义词-描述词-相关词": [
+            "stable",
+            "public",
+            "surveillance",
+            "guard",
+            "welfare",
+            "enforcement",
+            "ensure",
+            "safekeeping",
+            "guarantee",
+            "collateral"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "support",
+            "protection",
+            "job",
+            "work"
+        ],
+        "微博语境下中文翻译": [
+            "健康",
+            "家庭",
+            "秩序",
+            "干净",
+            "安全",
+            "归属"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "稳定",
+            "公共",
+            "监控",
+            "守卫",
+            "福利",
+            "执法",
+            "保障"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "支持",
+            "保护",
+            "工作",
+            "职场"
+        ]
+    },
+    "POWER": {
+        "原始定义": [
+            "wealth",
+            "authority",
+            "recognition"
+        ],
+        "近义词-描述词-相关词": [
+            "sovereign",
+            "superior",
+            "force",
+            "dominance",
+            "leadership",
+            "mighty",
+            "rule",
+            "mandate",
+            "prerogative",
+            "accomplishment"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "sovereign",
+            "superior",
+            "force",
+            "dominance",
+            "leadership",
+            "mighty",
+            "rule",
+            "mandate",
+            "prerogative",
+            "accomplishment"
+        ],
+        "微博语境下中文翻译": [
+            "财富",
+            "权威",
+            "认可"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "主权",
+            "优越",
+            "武力",
+            "统治",
+            "领导",
+            "强大",
+            "规则",
+            "使命"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "主权",
+            "优越",
+            "武力",
+            "统治",
+            "领导",
+            "强大",
+            "规则",
+            "使命"
+        ]
+    },
+    "ACHIEVEMENT": {
+        "原始定义": [
+            "influential",
+            "successful",
+            "ambitious",
+            "capable",
+            "intelligent"
+        ],
+        "近义词-描述词-相关词": [
+            "talented",
+            "great",
+            "intellectual",
+            "outstanding",
+            "brilliant",
+            "distinguished",
+            "affluent",
+            "completion",
+            "create",
+            "rich"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "challenge",
+            "positive",
+            "performance",
+            "potential"
+        ],
+        "微博语境下中文翻译": [
+            "影响力",
+            "成功",
+            "野心",
+            "能干",
+            "聪明"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "才华",
+            "卓越",
+            "学识",
+            "杰出",
+            "土豪",
+            "成就"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "挑战",
+            "正能量",
+            "表现",
+            "潜力"
+        ]
+    },
+    "HEDONISM": {
+        "原始定义": [
+            "pleasure",
+            "enjoy",
+            "indulgent"
+        ],
+        "近义词-描述词-相关词": [
+            "happiness",
+            "amusement",
+            "delight",
+            "fun",
+            "desire",
+            "joy",
+            "resort",
+            "satisfaction",
+            "sex",
+            "beauty"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "relax",
+            "exercise"
+        ],
+        "微博语境下中文翻译": [
+            "快乐",
+            "享受",
+            "放纵"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "幸福",
+            "娱乐",
+            "欲望",
+            "度假",
+            "美"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "放松",
+            "健身"
+        ]
+    },
+    "STIMULATION": {
+        "原始定义": [
+            "daring",
+            "variation",
+            "excitement"
+        ],
+        "近义词-描述词-相关词": [
+            "exploit",
+            "courage",
+            "innovative",
+            "adventure",
+            "changing",
+            "passion",
+            "enthusiasm",
+            "nervous",
+            "adventure",
+            "intense"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "communication",
+            "production",
+            "possibilities"
+        ],
+        "微博语境下中文翻译": [
+            "大胆",
+            "变化",
+            "兴奋"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "冒险",
+            "创新",
+            "热情",
+            "刺激"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "交流",
+            "创作",
+            "可能"
+        ]
+    },
+    "SELFDIRECTION": {
+        "原始定义": [
+            "freedom",
+            "curious",
+            "independent",
+            "goal",
+            "privacy",
+            "respect"
+        ],
+        "近义词-描述词-相关词": [
+            "individual",
+            "autonomy",
+            "self-reliance",
+            "unrestricted",
+            "conscience",
+            "rights",
+            "exploration",
+            "interests",
+            "discover",
+            "dignity"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "identity"
+        ],
+        "微博语境下中文翻译": [
+            "自由",
+            "好奇",
+            "独立",
+            "目标",
+            "隐私",
+            "尊重"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "个人",
+            "自主",
+            "探索",
+            "尊严"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "人设"
+        ]
+    },
+    "UNIVERSALISM": {
+        "原始定义": [
+            "broadminded",
+            "equality",
+            "unity",
+            "protection",
+            "harmony",
+            "justice",
+            "wisdom",
+            "beauty"
+        ],
+        "近义词-描述词-相关词": [
+            "divine",
+            "eternal",
+            "moral",
+            "ideal",
+            "solidarity",
+            "diversity",
+            "social",
+            "democracy",
+            "peace",
+            "compassion"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "services",
+            "understanding"
+        ],
+        "微博语境下中文翻译": [
+            "开明",
+            "平等",
+            "团结",
+            "和谐",
+            "正义"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "永恒",
+            "道德",
+            "多元",
+            "慈悲"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "服务",
+            "理解"
+        ]
+    },
+    "BENEVOLENCE": {
+        "原始定义": [
+            "love",
+            "spiritual",
+            "helpful",
+            "friendship",
+            "forgiving",
+            "responsible",
+            "loyal"
+        ],
+        "近义词-描述词-相关词": [
+            "mutual",
+            "generous",
+            "sincere",
+            "kindness",
+            "sympathy",
+            "genuine",
+            "faithful",
+            "charitable",
+            "mercy",
+            "humanity"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "mutual",
+            "generous",
+            "sincere",
+            "kindness",
+            "sympathy",
+            "genuine",
+            "faithful",
+            "charitable",
+            "mercy",
+            "humanity"
+        ],
+        "微博语境下中文翻译": [
+            "爱",
+            "互助",
+            "责任",
+            "忠诚"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "慷慨",
+            "真诚",
+            "同情",
+            "慈善"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "慷慨",
+            "真诚",
+            "同情",
+            "慈善"
+        ]
+    },
+    "CONFORMITY": {
+        "原始定义": [
+            "discipline",
+            "politeness",
+            "obedient"
+        ],
+        "近义词-描述词-相关词": [
+            "behavior",
+            "respectful",
+            "norms",
+            "strict",
+            "manner",
+            "formal",
+            "gentle",
+            "compliant",
+            "regulation",
+            "principle"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "behavior",
+            "respectful",
+            "norms",
+            "strict",
+            "manner",
+            "formal",
+            "gentle",
+            "compliant",
+            "regulation",
+            "principle"
+        ],
+        "微博语境下中文翻译": [
+            "纪律",
+            "礼貌",
+            "听话"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "规矩",
+            "严格",
+            "温和"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "规矩",
+            "严格",
+            "温和"
+        ]
+    },
+    "TRADITION": {
+        "原始定义": [
+            "humble",
+            "respect",
+            "devout",
+            "moderate"
+        ],
+        "近义词-描述词-相关词": [
+            "conservative",
+            "orthodox",
+            "pious",
+            "classic",
+            "ancient",
+            "integrity",
+            "christian",
+            "buddhist",
+            "republican",
+            "islamic"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "responsibility",
+            "religion"
+        ],
+        "微博语境下中文翻译": [
+            "谦逊",
+            "虔诚",
+            "中庸"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "保守",
+            "传统",
+            "信仰"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "责任",
+            "宗教"
+        ]
+    }
+}

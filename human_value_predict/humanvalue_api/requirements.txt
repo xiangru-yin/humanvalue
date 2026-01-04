@@ -1,0 +1,4 @@
+torch~=2.7.1+cu118
+lightning~=2.5.2
+transformers~=4.53.1
+pandas~=2.3.0
