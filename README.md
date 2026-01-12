@@ -34,6 +34,9 @@
   6. 群体分析（humanvalue_predict/k_cluster.py）基于分析好的个体结果，使用聚类算法分析群体构成和典型群体价值观，并整理所有分析结果，转化为提交服务器的格式
 
   1. 统计分析接口（humanvalue_predict/static_analyize_api.py）统计帖子随时间变化趋势，地域分布，转赞评数量，并绘制词云图
+### 环境配置
+分析服务的环境于humanvalue/humanvalue/human_value_predict/requirements.txt下，但可能缺乏些服务器上的环境，请以服务器上的配置为准
+训练环境主要依赖为在python 3.11.14下，torch==2.9.1，lightning==2.6.0，transformers==4.55.0，pandas==2.3.3，scikit-learn==1.8.0, typing，具体库版本或许可以调整
 
 ## 价值观分析服务流程
 ### 下载模型
