@@ -32,24 +32,24 @@ class BertDataModule(LightningDataModule):
             data=self.val_df,
             tokenizer=self.tokenizer,
             max_token_count=self.params["MAX_TOKEN_COUNT"],
-            label_columns=self.label_columns,# 传递权重信息
+            label_columns=self.label_columns,
+            use_valuetalk=self.use_valuetalk,  # 是否使用value talk数据集，这个数据集的格式不太一样
         )
 
         self.test_dataset = BertDataset(
             data=self.test_df,
             tokenizer=self.tokenizer,
             max_token_count=self.params["MAX_TOKEN_COUNT"],
-            label_columns=self.label_columns,# 传递权重信息
-            use_valuetalk=self.use_valuetalk, #是否使用value talk数据集，这个数据集的格式不太一样
+            label_columns=self.label_columns,
         )
 
         # 创建加权采样器（如果训练数据有权重）
-        if self.has_weights:
+        if self.has_weights and False:
             weights = self.train_df['data_weight'].values
             # 归一化权重用于采样器
             weights = weights / weights.sum() #权重总和归一化
-            self.train_df['data_weight'] = weights * len(weights) # 我们希望所有样本的权重综合还是1*len，这样所有样本的损失求和理论上一致
-            self.weighted_sampler = WeightedRandomSampler( # 我加权采样器
+            self.train_df['data_weight'] = weights * len(weights) # 希望所有样本的权重综合还是1*len，这样所有样本的损失求和理论上一致
+            self.weighted_sampler = WeightedRandomSampler( # 加权采样器
                 weights=weights,
                 num_samples=len(weights),
                 replacement=True
@@ -57,7 +57,7 @@ class BertDataModule(LightningDataModule):
             print(f"创建加权采样器: 权重范围 {weights.min():.4f} - {weights.max():.4f}")
         else:
             self.weighted_sampler = None
-            print("未找到权重列，使用普通采样")
+            print("使用普通采样")
 
     def train_dataloader(self):
         return DataLoader(
@@ -90,10 +90,9 @@ class BertDataModule(LightningDataModule):
             )
 
     def val_dataloader(self):
-        # 使用test来当作val，这样可以避免valuetalk和原val数据集不同的评价方式导致不能直观看结果
-        # 正式训练时，可以更换回去
+
         return DataLoader(
-            self.test_dataset,
+            self.val_dataset,
             batch_size=self.params["BATCH_SIZE"],
             num_workers=self.params["NUM_VAL_WORKERS"]
         )
