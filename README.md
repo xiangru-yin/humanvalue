@@ -37,7 +37,7 @@
 
 ## 价值观分析服务流程
 ### 下载模型
-链接：https://pan.quark.cn/s/d7f8877ddbc8，存放于/humanvalue/human_value_predict/humanvalue_api/checkpoints/下
+链接：https://pan.quark.cn/s/c996b6d0e94f，存放于/humanvalue/human_value_predict/humanvalue_api/checkpoints/下
 #### 分析指令
 ```bash
 cd human_value_predict
@@ -58,8 +58,8 @@ python predict_human_value_api.py
 ### 数据准备
 **数据源：**
 - 下载数据，放在dataset下，并设置train.py中的数据名称
-- 训练数据：基础数据training_data_with_weights.parquet或包含武汉的扩充数据wuhan_train_weighted.parquet
-- 验证数据集：由训练数据集切分得到
+- 训练数据：基础数据train_vt_only_v10_weighted.parquet或包含武汉的扩充数据wuhan_train_vt_only_v10_weighted.parquet
+- 验证数据集：使用valuetalk_val_only_v10.csv，是我们切分出来的只有200条数据的验证集
 数据存放地址：
 夸克网盘：https://pan.quark.cn/s/924335bdb441
 
