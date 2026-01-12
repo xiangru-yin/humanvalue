@@ -97,7 +97,7 @@ def llm_trans_file(input_file, skip_used=True):
     df = df.fillna("")
 
     # 计算分批运行次数
-    total_step = len(df) // batch
+    total_step = (len(df) // batch) + 1
 
     # 开始分批运行
     for i in tqdm(range(total_step)):
@@ -176,7 +176,7 @@ def llm_trans_file(input_file, skip_used=True):
 
 
     # 开始分批运行
-    total_step = len(df) // N_NUM
+    total_step = (len(df) // N_NUM) + 1
     for i in tqdm(range(total_step)):
         # 确定该批次的范围
         start = i * N_NUM
