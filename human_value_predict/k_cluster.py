@@ -11,6 +11,8 @@ from utils import *
 from basic_config import *
 from scipy.stats import kurtosis
 import warnings
+#from GMM import auto_cluster_values
+#from auto_cluster import auto_cluster_values
 
 warnings.filterwarnings('ignore')
 
@@ -108,6 +110,7 @@ def trans_hanzi_value(input):
     # 将中文表达的价值观转化为数值，只对基于大模型的价值观预测有用
     # 具体转化数值可以再调整
     if type(input) == float or type(input) == int:
+
         return input
     try:
         input = float(input)
@@ -436,6 +439,9 @@ def get_jiazhiguan_file_multi(file_path, total_draw_num=20, filter_dict=dict()):
 
     # 取出各事件的数据
     # 目前默认一个数据文件里只有一个事件，如果不止的话，请修改one_file_with_multi_event，避免不同事件结果混在一起
+    if "target" in df.columns:
+        # 处理valuetalk的结果
+        df["话题"] = df["target"]
     event_data_to_analyiz = []
     if one_file_with_multi_event:
         # 一个文件里有多个事件，需要拆开来分别聚类
@@ -457,7 +463,7 @@ def get_jiazhiguan_file_multi(file_path, total_draw_num=20, filter_dict=dict()):
     for event_data in event_data_to_analyiz:
         # 假设 input_data_1 是一个10或20维的Pandas DataFrame
         # input_data_1 = pd.DataFrame(np.random.rand(100, 10))  # 示例数据
-        if len(event_data) < 5:
+        if len(event_data) < 6:
             continue
 
         if llm_or_bert:
@@ -479,6 +485,18 @@ def get_jiazhiguan_file_multi(file_path, total_draw_num=20, filter_dict=dict()):
 
         # 设置最大聚类数
         max_k = 7
+
+        if False:
+            tsne = TSNE(n_components=2, random_state=42, perplexity=min(len(input_data_1) / 2, 30))
+            combined_data = input_data_1
+            input_data_1 = tsne.fit_transform(combined_data)
+            input_data_1 = pd.DataFrame(input_data_1)
+        if False:
+            pca = PCA(n_components=4)
+            input_data_1 = pca.fit_transform(input_data_1)
+            input_data_1 = pd.DataFrame(input_data_1)
+
+
         # 根据肘部法则或轮廓系数选择合适的k值
         optimal_k = find_optimal_k(input_data_1, max_k)
         optimal_k = max(optimal_k, 4)
@@ -496,6 +514,8 @@ def get_jiazhiguan_file_multi(file_path, total_draw_num=20, filter_dict=dict()):
         input_data_1['Cluster'] = labels
         print("\nData with Cluster Labels:\n", input_data_1.head())
         # 记录聚类结果
+
+        input_data_1['Cluster'] = labels
         event_data['cluster_label'] = labels
         # 由于系统显示功能调整，以下部分暂时用不上了
         if False:
@@ -603,7 +623,7 @@ def get_jiazhiguan_file_multi(file_path, total_draw_num=20, filter_dict=dict()):
 
 
 
-        # 该功能由于系统显示功能调整，暂时用不上了
+        # 该功能由于系统显示功能调整，暂时用不上了，这是原本用于展示典型帖子用的，现在已调整为展示异常帖子
         def get_top_samples_per_cluster(input_data, cluster_labels, cluster_centers, df_copy, n_samples=10):
             # 获取每个聚类中心最相近的n_samples个原始样本和序号
 
@@ -803,8 +823,7 @@ def get_jiazhiguan_file_multi(file_path, total_draw_num=20, filter_dict=dict()):
 
     return all_result_list
 
-
-
 if __name__ == '__main__':
     #get_dir_group_value("D:\Pycharm\watch_system\human_value_predict\human_value_data\cluster_events_test_学生")
-    get_jiazhiguan_file_multi("D:\Pycharm\watch_system\human_value_predict\human_value_data\\valuetalk_try\\valuetalk_enrich_test_only_simple_split_ensemble.csv")
+    get_jiazhiguan_file_multi(r"D:\Pycharm\watch_system\human_value_predict\human_value_data\valuetalk_test_only\valuetalk_test_only_v10_originalensemble.csv")
+    get_jiazhiguan_file_multi(r"D:\Pycharm\watch_system\human_value_predict\human_value_data\valuetalk_test_only\valuetalk_test_only_v10_ensemble.csv")
