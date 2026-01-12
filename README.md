@@ -74,3 +74,16 @@ python train.py
 #### 输出
 - 模型默认保存至 `./checkpoints`目录
 
+### 推理
+- 使用专为valuetalk设计的human_value_train/bert_predict.py，设置好模型位置后运行即可
+
+## 测试
+- 个体测试通过human_value_train/eval_valuetalk.py，设置好推理所得文件位置后运行即可
+- 群体测试通过human_value_train/eval_valuetalk_event.py，设置好推理所得文件位置后运行即可
+
+### 如何增加新的数据集
+- 1. 将目标数据集经过human_value_predict后得到符合训练的格式的数据
+- 2. 对其进行标注，比如通过大模型等
+- 3. 使用human_value_train/data/data_preprocess处理其所在文件夹，将数据文件与已有数据进行合并
+- 4. 使用human_value_train/analyiz_value_realif_simple.py为数据文件生成数据权重
+- 5. 进行训练
