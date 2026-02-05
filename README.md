@@ -105,37 +105,60 @@ python train.py
 
 ## 推理服务参数详解
 ### 关键词筛选部分
+####
 ord_file，用于指定本地的价值观关键词原始词表位置
+####
 weibo_file，用于指定本地的价值观关键词微博化词表位置
 
 ### 大语言模型筛选和增强部分
+####
 api_key，用于指定大模型的API_KEY
+####
 api_url，用于指定大模型访问的远程端口或本地端口
 
+####
 use_parallel_if，是否并发请求大模型
+####
 parallel_max_num，并发请求最大数量
+####
 batch，多少个数据打包成一批一起处理，需注意，对于翻译来说，其实际为batch*平均句子数
+####
 use_local_pic_if，是否使用本地图片，如果为ture，将读取pic下文件，如果为false，将尝试将图片url传递给大模型
 
+####
 content_model，所使用的文本大模型名称
+####
 multi_model，所使用的多模态(图文)大模型
+####
 multi_modal，是否使用在文本处理时使用多模态
 
 ### bert集成分析部分
-
+####
 model_config_dic，所使用的bert模型配置表
+####
 checkpoint_path，所训练模型ckpt文件位置
+####
 model_name，模型的hugging face名称，用于在本地没有时，联网获取
+####
 local_model_path，模型的本地存放位置，用于读取模型及tokenizer
+####
 label_columns，模型的输出类别名称和顺序
 
+####
 cyx_model，所使用的训练好的模型的配置
+####
 bert_model_list，所使用的多个bert模型的配置
+####
 llm_model，所使用的大模型的接口配置
 
 ### k均值聚类和可视化部分
+####
 enhance_performence，是否对结果缩放以获得更好的视觉效果，由于采用雷达图，如果有价值观为0，会造成雷达图上的尖刺感，不好看，由此对数据进行了缩放
+####
 llm_or_bert，使用llm格式（我们预训练好的模型也是这个）还是原始bert格式（指的是bert_model_list中的未训练模型输出格式）
+####
 sharp_internel_weight，选择尖锐价值观样本时的权重
+####
 one_file_with_multi_event，一个文件中是否可能有多个文件，如果为是，将对该文件内的每个事件分别处理
+####
 trans_data_screen，最后的输出格式接口，方便调整
