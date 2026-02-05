@@ -49,7 +49,7 @@ def llm_prompt_trans_simple(blog="", time="", user_info="None", blog_info='None'
 
 
 
-def llm_filter_data_dir(dir_path):
+def llm_filter_data_dir(dir_path, skip_used=True):
     # 基于大模型的筛选和数据增强，主要功能为调用大模型对数据进行价值观筛选，并对通过筛选的生成总结和翻译
     # 输入为文件夹地址，输出暂无用途
     csv_list = get_files_in_folder(dir_path)
@@ -70,10 +70,10 @@ def llm_filter_data_dir(dir_path):
     from joblib import Parallel, delayed
     if use_parallel_if:
         Parallel(n_jobs=min(parallel_max_num, os.cpu_count() - 3, len(path_need)))(
-            delayed(llm_trans_file)(path_need[i]) for i in tqdm(range(len(path_need))))
+            delayed(llm_trans_file)(path_need[i], skip_used=skip_used) for i in tqdm(range(len(path_need))))
     else:
         for i in tqdm(range(len(path_need))):
-            llm_trans_file(path_need[i])
+            llm_trans_file(path_need[i], skip_used=skip_used)
 
     return dir_path
 def llm_trans_file(input_file, skip_used=True):

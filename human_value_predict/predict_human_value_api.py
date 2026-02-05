@@ -180,7 +180,9 @@ def init(checkpoint_path=f"checkpoints{os.sep}value_finest.ckpt",
     print("初始化完成！")
     print("="*50)
 
-    cyx_api.init()
+    cyx_api.init(
+        **model_config_dic['cyx_model']
+    )
 
 
 def forward(event_name="",
@@ -195,9 +197,9 @@ def forward(event_name="",
     # 进行关键词筛选
     dir_path = filter_data_dir(dir_path)
     # 进行多模态增强
-    dir_path = llm_describe_data_dir(dir_path)
+    dir_path = llm_describe_data_dir(dir_path, skip_used=skip_used)
     # 进行大语言模型筛选和增强
-    dir_path = llm_filter_data_dir(dir_path)
+    dir_path = llm_filter_data_dir(dir_path, skip_used=skip_used)
     tokenizer_list = []
     trained_model_list = []
     label_columns_list = []
@@ -277,5 +279,6 @@ if __name__ == "__main__":
     #get_value_dir('wb_用户文件_学生')
     init()
     forward(event_name="",
-            event_data_csv_path=f"..{os.sep}human_value_data{os.sep}外交部",
+            #event_data_csv_path=f"..{os.sep}human_value_data{os.sep}valuetalk_train",
+            event_data_csv_path=r"D:\Pycharm\watch_system\human_value_predict\human_value_data\外交部",
             skip_used=True)

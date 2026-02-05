@@ -19,8 +19,8 @@ batch = 10 # 多少个数据打包成一批一起处理，需注意，对于翻�
 use_local_pic_if = True
 
 # content_model = 'deepseek-chat'
-content_model = 'deepseek-chat' # 文本模型
-# content_model = 'qwen2.5-vl-7b-instruct'
+#content_model = 'deepseek-chat' # 文本模型
+content_model = 'qwen2.5-vl-7b-instruct'
 # content_model = 'local'
 # multi_model = 'gpt-4o'
 multi_model = "qwen2.5-vl-7b-instruct"
@@ -31,14 +31,15 @@ multi_modal = True
 
 model_config_dic = {
              'cyx_model':{
-                 'model_name':f'IDEA-CCNL{os.sep}Erlangshen-DeBERTa-v2-320M-Chinese',
-                 'local_model_path':f'..{os.sep}human_value_predict{os.sep}saved_models{os.sep}Deberta_Human_Value_Detector',
+                 "checkpoint_path":"D:\Pycharm\watch_system\human_value_predict\humanvalue_api\checkpoints\last-0.796.ckpt",# 训练好的
+                 "model_name":'IDEA-CCNL/Erlangshen-DeBERTa-v2-320M-Chinese', # hugging_face 网址，但这个需要重新训练
+                 "local_model_path":'saved_models/IDEA-CCNL/Erlangshen-DeBERTa-v2-320M-Chinese'
              },
              "bert_model_list":[
                  {
                      'model_path':f"..{os.sep}human_value_predict{os.sep}saved_models{os.sep}Deberta_Human_Value_Detector",
                      'tokenizer_path': f'..{os.sep}human_value_predict{os.sep}saved_models{os.sep}Deberta_Human_Value_Detector',
-                     'model_name':'Deberta_Human_Value_Detector',
+                     'model_name':'tum-nlp/Deberta_Human_Value_Detector',#hugging_face 网址
                      'label_columns': ['思想自主', '行动自主', '刺激', '享乐主义', '成就', '支配权力', '资源权力',
                                            '面子', '个人安全', '社会安全', '传统', '规则遵从', '人际遵从', '谦逊',
                                            '友善-关怀', '友善-可依赖', '博爱-关注', '博爱-大自然', '博爱-宽容',
@@ -48,7 +49,7 @@ model_config_dic = {
                 {
                      'model_path':f'..{os.sep}human_value_predict{os.sep}saved_models{os.sep}danschr{os.sep}roberta-large-BS_16-EPOCHS_5-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165{os.sep}HCV-371-danschr-roberta-large-BS_16-EPOCHS_8-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165-BS_8-LR_2e-05-HL_None-DROPOUT_None-SL_None.ckpt',
                      'tokenizer_path':f'..{os.sep}human_value_predict{os.sep}saved_models{os.sep}danschr{os.sep}roberta-large-BS_16-EPOCHS_5-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165',
-                     'model_name':f'roberta-large-BS_16-EPOCHS_5-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165',
+                     'model_name':f'roberta-large-BS_16-EPOCHS_5-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165',#hugging_face 网址
                      'params_path':f'..{os.sep}human_value_predict{os.sep}saved_models{os.sep}danschr{os.sep}roberta-large-BS_16-EPOCHS_5-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165{os.sep}HCV-371_PARAMS.pkl',
                      'label_columns':['思想自主','行动自主','刺激','享乐主义','成就','支配权力','资源权力','面子','个人安全','社会安全','传统','规则遵从','人际遵从','谦逊','友善-关怀','友善-可依赖','博爱-关注','博爱-大自然','博爱-宽容','博爱-客观性'],
                  },
@@ -66,7 +67,7 @@ model_config_dic = {
 enhance_performence = True
 llm_or_bert = True
 sharp_internel_weight = 0.5
-one_file_with_multi_event = True
+one_file_with_multi_event = False
 
 # 最后的输出格式接口，方便调整
 def trans_data_screen(data: dict):

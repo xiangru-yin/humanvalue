@@ -81,7 +81,7 @@ def init(checkpoint_path="humanvalue_api/checkpoints/last-0.796.ckpt",
     _num_workers = num_workers
 
     _params = {
-        "MODEL_NAME": model_name,
+        "MODEL_NAME": local_model_path,
         "BATCH_SIZE": batch_size,
         "MAX_TOKEN_COUNT": max_token_count,
         "RANDOM_SEED": random_seed,
@@ -121,7 +121,8 @@ def init(checkpoint_path="humanvalue_api/checkpoints/last-0.796.ckpt",
     print(f"加载模型权重: {checkpoint_path}")
     _model = DebertaMultiLabelClassifier.load_from_checkpoint(
         checkpoint_path=checkpoint_path,
-        params=_params
+        params=_params,
+        local_files_only=True
     )
 
     _model.eval()
