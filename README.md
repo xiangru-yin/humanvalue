@@ -4,13 +4,13 @@
 本模型是一个基于bert搭配多模态大语言模型MLLM的微博价值观分析模型。模型采用关键词和LLM筛选，来去除噪声和无价值观数据，并可使用MLLM增加图片信息。模型本体通过集成bert模型实现对微博的施瓦茨价值观分析，并通过聚类来可视化群体价值观分布。
 本模型下附属统计模块，负责统计日帖子数，词云图等信息，用以补充
 相关模型:
-
+###
 cyx_model，基于https://huggingface.co/IDEA-CCNL/Erlangshen-DeBERTa-v2-320M-Chinese进一步训练的模型，用于最终的集成预测。
   相关论文：Fengshenbang 1.0: Being the Foundation of Chinese Cognitive Intelligence，感谢他们的工作和很棒的预训练模型
-
+###
 bert_model，包含https://huggingface.co/danschr/roberta-large-BS_16-EPOCHS_5-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165/tree/main，和https://huggingface.co/tum-nlp/Deberta_Human_Value_Detector。
   该模型是作为价值观比赛获奖方案的一部分，用于多角度分析，相关论文：Adam-Smith at SemEval-2023 Task 4: Discovering Human Values in Arguments with Ensembles of Transformer-based Models，感谢他们的工作
-
+###
 qwen_model，基于API的大模型，用于进行图片描述，文本总结和文本翻译，在此处我们采用QWEN2.5VL，亦可尝试其他模型。
   其技术报告为Qwen2.5-VL Technical Report，感谢他们的工作和好用的大模型
 
