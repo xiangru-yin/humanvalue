@@ -3,6 +3,13 @@
 ## 模型概述
 本模型是一个基于bert搭配多模态大语言模型MLLM的微博价值观分析模型。模型采用关键词和LLM筛选，来去除噪声和无价值观数据，并可使用MLLM增加图片信息。模型本体通过集成bert模型实现对微博的施瓦茨价值观分析，并通过聚类来可视化群体价值观分布。
 本模型下附属统计模块，负责统计日帖子数，词云图等信息，用以补充
+相关模型:
+cyx_model，基于https://huggingface.co/IDEA-CCNL/Erlangshen-DeBERTa-v2-320M-Chinese进一步训练的模型，用于最终的集成预测。
+  相关论文：Fengshenbang 1.0: Being the Foundation of Chinese Cognitive Intelligence，感谢他们的工作和很棒的预训练模型
+bert_model，包含https://huggingface.co/danschr/roberta-large-BS_16-EPOCHS_5-LR_5e-05-ACC_GRAD_2-MAX_LENGTH_165/tree/main，和https://huggingface.co/tum-nlp/Deberta_Human_Value_Detector。
+  该模型是作为价值观比赛获奖方案的一部分，用于多角度分析，相关论文：Adam-Smith at SemEval-2023 Task 4: Discovering Human Values in Arguments with Ensembles of Transformer-based Models，感谢他们的工作
+qwen_model，基于API的大模型，用于进行图片描述，文本总结和文本翻译，在此处我们采用QWEN2.5VL，亦可尝试其他模型。
+  其技术报告为Qwen2.5-VL Technical Report，感谢他们的工作和好用的大模型
 
 ## 核心功能
 ### 算法输入
@@ -37,6 +44,8 @@
 ### 环境配置
 分析服务的环境于humanvalue/humanvalue/human_value_predict/requirements.txt下，但可能缺乏些服务器上的环境，请以服务器上的配置为准
 训练环境主要依赖为在python 3.11.14下，torch==2.9.1，lightning==2.6.0，transformers==4.55.0，pandas==2.3.3，scikit-learn==1.8.0, typing，具体库版本或许可以调整
+
+
 
 ## 价值观分析服务流程
 ### 下载模型
@@ -84,9 +93,46 @@ python train.py
 - 个体测试通过human_value_train/eval_valuetalk.py，设置好推理所得文件位置后运行即可
 - 群体测试通过human_value_train/eval_valuetalk_event.py，设置好推理所得文件位置后运行即可
 
-### 如何增加新的数据集
+# 如何增加新的数据集
 - 1. 将目标数据集经过human_value_predict后得到符合训练的格式的数据
 - 2. 对其进行标注，比如通过大模型等
 - 3. 使用human_value_train/data/data_preprocess处理其所在文件夹，将数据文件与已有数据进行合并
 - 4. 使用human_value_train/analyiz_value_realif_simple.py为数据文件生成数据权重
 - 5. 进行训练
+
+## 推理服务参数详解
+###关键词筛选部分
+ord_file，用于指定本地的价值观关键词原始词表位置
+weibo_file，用于指定本地的价值观关键词微博化词表位置
+
+### 大语言模型筛选和增强部分
+api_key，用于指定大模型的API_KEY
+api_url，用于指定大模型访问的远程端口或本地端口
+
+use_parallel_if，是否并发请求大模型
+parallel_max_num，并发请求最大数量
+batch，多少个数据打包成一批一起处理，需注意，对于翻译来说，其实际为batch*平均句子数
+use_local_pic_if，是否使用本地图片，如果为ture，将读取pic下文件，如果为false，将尝试将图片url传递给大模型
+
+content_model，所使用的文本大模型名称
+multi_model，所使用的多模态(图文)大模型
+multi_modal，是否使用在文本处理时使用多模态
+
+### bert集成分析部分
+
+model_config_dic，所使用的bert模型配置表
+checkpoint_path，所训练模型ckpt文件位置
+model_name，模型的hugging face名称，用于在本地没有时，联网获取
+local_model_path，模型的本地存放位置，用于读取模型及tokenizer
+label_columns，模型的输出类别名称和顺序
+
+cyx_model，所使用的训练好的模型的配置
+bert_model_list，所使用的多个bert模型的配置
+llm_model，所使用的大模型的接口配置
+
+### k均值聚类和可视化部分
+enhance_performence，是否对结果缩放以获得更好的视觉效果，由于采用雷达图，如果有价值观为0，会造成雷达图上的尖刺感，不好看，由此对数据进行了缩放
+llm_or_bert，使用llm格式（我们预训练好的模型也是这个）还是原始bert格式（指的是bert_model_list中的未训练模型输出格式）
+sharp_internel_weight，选择尖锐价值观样本时的权重
+one_file_with_multi_event，一个文件中是否可能有多个文件，如果为是，将对该文件内的每个事件分别处理
+trans_data_screen，最后的输出格式接口，方便调整
