@@ -1,0 +1,418 @@
+{
+    "SECURITY": {
+        "原始定义": [
+            "healthy",
+            "family",
+            "order",
+            "clean",
+            "safety",
+            "belonging"
+        ],
+        "近义词-描述词-相关词": [
+            "stable",
+            "public",
+            "surveillance",
+            "guard",
+            "welfare",
+            "enforcement",
+            "ensure",
+            "safekeeping",
+            "guarantee",
+            "collateral"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "support",
+            "protection",
+            "job",
+            "work"
+        ],
+        "微博语境下中文翻译": [
+            "健康养生",
+            "家庭顶梁柱",
+            "安全区"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "稳如老狗",
+            "天眼监控",
+            "社保兜底"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "后台很硬",
+            "搬砖护体"
+        ]
+    },
+    "POWER": {
+        "原始定义": [
+            "wealth",
+            "authority",
+            "recognition"
+        ],
+        "近义词-描述词-相关词": [
+            "sovereign",
+            "superior",
+            "force",
+            "dominance",
+            "leadership",
+            "mighty",
+            "rule",
+            "mandate",
+            "prerogative",
+            "accomplishment"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "sovereign",
+            "superior",
+            "force",
+            "dominance",
+            "leadership",
+            "mighty",
+            "rule",
+            "mandate",
+            "prerogative",
+            "accomplishment"
+        ],
+        "微博语境下中文翻译": [
+            "钞能力",
+            "大佬认证",
+            "排面担当"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "王者段位",
+            "碾压局",
+            "话语权"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "C位出道",
+            "控场能力"
+        ]
+    },
+    "ACHIEVEMENT": {
+        "原始定义": [
+            "influential",
+            "successful",
+            "ambitious",
+            "capable",
+            "intelligent"
+        ],
+        "近义词-描述词-相关词": [
+            "talented",
+            "great",
+            "intellectual",
+            "outstanding",
+            "brilliant",
+            "distinguished",
+            "affluent",
+            "completion",
+            "create",
+            "rich"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "challenge",
+            "positive",
+            "performance",
+            "potential"
+        ],
+        "微博语境下中文翻译": [
+            "开挂人生",
+            "人赢模板",
+            "凡尔赛大师"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "六边形战士",
+            "神仙甲方",
+            "氪金玩家"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "逆袭剧本",
+            "潜力股"
+        ]
+    },
+    "HEDONISM": {
+        "原始定义": [
+            "pleasure",
+            "enjoy",
+            "indulgent"
+        ],
+        "近义词-描述词-相关词": [
+            "happiness",
+            "amusement",
+            "delight",
+            "fun",
+            "desire",
+            "joy",
+            "resort",
+            "satisfaction",
+            "sex",
+            "beauty"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "relax",
+            "exercise"
+        ],
+        "微博语境下中文翻译": [
+            "躺平快乐",
+            "多巴胺自由",
+            "夜店咖"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "快乐肥宅水",
+            "沉浸式爽感",
+            "颜控福利"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "养生蹦迪",
+            "暴汗解压"
+        ]
+    },
+    "STIMULATION": {
+        "原始定义": [
+            "daring",
+            "variation",
+            "excitement"
+        ],
+        "近义词-描述词-相关词": [
+            "exploit",
+            "courage",
+            "innovative",
+            "adventure",
+            "changing",
+            "passion",
+            "enthusiasm",
+            "nervous",
+            "adventure",
+            "intense"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "communication",
+            "production",
+            "possibilities"
+        ],
+        "微博语境下中文翻译": [
+            "整活大师",
+            "颅内高潮",
+            "极限挑战"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "骚操作",
+            "肾上腺素飙升",
+            "网感炸裂"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "脑洞大开",
+            "新赛道"
+        ]
+    },
+    "SELFDIRECTION": {
+        "原始定义": [
+            "freedom",
+            "curious",
+            "independent",
+            "goal",
+            "privacy",
+            "respect"
+        ],
+        "近义词-描述词-相关词": [
+            "individual",
+            "autonomy",
+            "self-reliance",
+            "unrestricted",
+            "conscience",
+            "rights",
+            "exploration",
+            "interests",
+            "discover",
+            "dignity"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "identity"
+        ],
+        "微博语境下中文翻译": [
+            "人间清醒",
+            "反骨仔",
+            "我命油我"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "孤勇者",
+            "精神离职",
+            "考古学家"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "人设不崩",
+            "ID定位"
+        ]
+    },
+    "UNIVERSALISM": {
+        "原始定义": [
+            "broadminded",
+            "equality",
+            "unity",
+            "protection",
+            "harmony",
+            "justice",
+            "wisdom",
+            "beauty"
+        ],
+        "近义词-描述词-相关词": [
+            "divine",
+            "eternal",
+            "moral",
+            "ideal",
+            "solidarity",
+            "diversity",
+            "social",
+            "democracy",
+            "peace",
+            "compassion"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "services",
+            "understanding"
+        ],
+        "微博语境下中文翻译": [
+            "格局打开",
+            "地球村村民",
+            "端水大师"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "圣母光环",
+            "彩虹屁",
+            "命运共同体"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "吃瓜群众",
+            "懂王"
+        ]
+    },
+    "BENEVOLENCE": {
+        "原始定义": [
+            "love",
+            "spiritual",
+            "helpful",
+            "friendship",
+            "forgiving",
+            "responsible",
+            "loyal"
+        ],
+        "近义词-描述词-相关词": [
+            "mutual",
+            "generous",
+            "sincere",
+            "kindness",
+            "sympathy",
+            "genuine",
+            "faithful",
+            "charitable",
+            "mercy",
+            "humanity"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "mutual",
+            "generous",
+            "sincere",
+            "kindness",
+            "sympathy",
+            "genuine",
+            "faithful",
+            "charitable",
+            "mercy",
+            "humanity"
+        ],
+        "微博语境下中文翻译": [
+            "人间小太阳",
+            "救命稻草",
+            "神仙同事"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "双向奔赴",
+            "电子菩萨",
+            "情绪价值"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "互联网嘴替",
+            "共情天花板"
+        ]
+    },
+    "CONFORMITY": {
+        "原始定义": [
+            "discipline",
+            "politeness",
+            "obedient"
+        ],
+        "近义词-描述词-相关词": [
+            "behavior",
+            "respectful",
+            "norms",
+            "strict",
+            "manner",
+            "formal",
+            "gentle",
+            "compliant",
+            "regulation",
+            "principle"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "behavior",
+            "respectful",
+            "norms",
+            "strict",
+            "manner",
+            "formal",
+            "gentle",
+            "compliant",
+            "regulation",
+            "principle"
+        ],
+        "微博语境下中文翻译": [
+            "社恐日常",
+            "规矩人",
+            "乙里乙气"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "求生欲",
+            "糊弄学大师",
+            "五好青年"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "摸鱼标兵",
+            "打卡机器"
+        ]
+    },
+    "TRADITION": {
+        "原始定义": [
+            "humble",
+            "respect",
+            "devout",
+            "moderate"
+        ],
+        "近义词-描述词-相关词": [
+            "conservative",
+            "orthodox",
+            "pious",
+            "classic",
+            "ancient",
+            "integrity",
+            "christian",
+            "buddhist",
+            "republican",
+            "islamic"
+        ],
+        "GloVe嵌入空间语义相似词": [
+            "responsibility",
+            "religion"
+        ],
+        "微博语境下中文翻译": [
+            "祖安传统文化",
+            "非遗守护者",
+            "佛系青年"
+        ],
+        "近义词-描述词-相关词的微博语境下中文翻译": [
+            "古法养生",
+            "国潮复兴",
+            "家学渊源"
+        ],
+        "GloVe嵌入空间语义相似词的微博语境下中文翻译": [
+            "玄学护体",
+            "功德+1"
+        ]
+    }
+}
